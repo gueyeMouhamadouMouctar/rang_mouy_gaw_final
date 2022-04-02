@@ -5,6 +5,7 @@ from . import guichet_views, tickets_views, menu, super_views, index_views
 urlpatterns = [
     path('', index_views.index, name='index'),
     path('auth', index_views.auth, name='auth'),
+    path("login/",index_views.login,name="login"),
     path('guichets', guichet_views.guichets, name='guichets'),
     # path('caisse', guichet_views.caisse, name='caisse'),
     path('caisse', guichet_views.listeFA, name='listefileDattente'),

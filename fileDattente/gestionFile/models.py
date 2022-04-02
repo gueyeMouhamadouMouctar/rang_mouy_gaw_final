@@ -4,7 +4,7 @@
 
 import mysql.connector
 from mysql.connector import errorcode
-
+from django.db import models
 
 class ClientQueueManager:
     @staticmethod
@@ -151,16 +151,15 @@ class ClientQueueManager:
 #         return self.id
 
 
-# class Personnel(models.Model):
-#     idPersonnel = models.IntegerField(primary_key=True)
-#     nom = models.CharField(max_length=255)
-#     prenom = models.CharField(max_length=255)
-#     profil = models.CharField(max_length=255)
-#     email = models.EmailField(max_length=255, unique=True)
-#     password = models.CharField(max_length=255)
+class Personnel(models.Model):
+    idPersonnel = models.IntegerField(primary_key=True)
+    nom = models.CharField(max_length=255)
+    prenom = models.CharField(max_length=255)
+    profil = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255, unique=True)
+    password = models.CharField(max_length=255)
 
-#     def __str__(self):
-#         return self.idPersonnel
+    empAuth_objects = models.Manager()
 
 
 # class Guichet(models.Model):
