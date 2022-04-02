@@ -1,51 +1,102 @@
-<!Doctype html>
-<html lang='fr'>
-
+{% load static %}
+ 
+<!DOCTYPE html>
+<html class=''>
 <head>
-    <meta charset='utf_8'>
-    <title> Gestion de file d'attente </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+ 
+<style class="cp-pen-styles">html, body {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+ 
+body {
+  background-color: #DEB887;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+form {
+    background: white;
+    width: 40%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+    font-family: lato;
+    position: relative;
+    color: #333;
+    border-radius: 10px;
+  }
+  form header {
+    background: #CD853F;
+    padding: 30px 20px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 10px 10px 0 0;
+  }
+  form label {
+    margin-left: 20px;
+    display: inline-block;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    position: relative;
+  }
+  
+  form input {
+    display: block;
+    width: 78%;
+    margin-left: 20px;
+    padding: 5px 20px;
+    font-size: 1em;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #ccc;
+  }
+  form .help {
+    margin-left: 20px;
+    font-size: 0.8em;
+    color: #777;
+  }
+  form button {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-family: inherit;
+    color: white;
+    background: #CD853F;
+    outline: none;
+    border: none;
+    padding: 5px 15px;
+    font-size: 1.3em;
+    font-weight: 400;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.4);
+    cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+form button:hover {
+  background: #ff5252;
+}
+</style>
 </head>
-
+ 
 <body>
-    <div class=" container row">
-        <div class="col-md-6">
-            photoDesign
-        </div>
-
-        <div class="col-md-6 card">
-
-            <form>
-                <div class="col md-3">
-                    <label for="login" class="form-label">Login</label>
-                    <input type="text" class="form-control" id="login">
-                    <!--<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-                </div>
-                <div class="col md-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password">
-                </div>
-                <!-- <div class="col md-3">
-                <label for="password" class="form-label">Profile</label>
-                <select name="profile" class="form-select form-select-md md-3" >
-                <option>Selectionner un profile</option>
-                <option value='AgentComptoire'>AgentComptoire</option>
-                <option value='Superviseur'>Superviseur</option>
-                </select>
-                
-              </div> -->
-
-                <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
-
-            </form>
-        </div>
-
-    </div>
-    </div>
-
-
+ 
+<form method="post" action="login/">
+ {% csrf_token %}  
+ 
+  <header>Login</header>
+  <label>Email </label>
+  <input type="text"   name="email" placeholder="Email" required="" />
+  <label>Password</label>
+  <input type="password"  name="password" placeholder="Password" required="" />
+  <button type="submit">Login</button>
+ 
+</form>
+ 
 </body>
-
 </html>
