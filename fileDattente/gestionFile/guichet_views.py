@@ -11,6 +11,10 @@ def guichets(request):
     return render(request, 'espace_guichet.html')
 
 
+def vigile(request):
+    return render(request, 'espace_vigile.html')
+
+
 def caisse(request, numGuichet=0):
     if request.method == 'POST':
         numero = request.POST['numero']

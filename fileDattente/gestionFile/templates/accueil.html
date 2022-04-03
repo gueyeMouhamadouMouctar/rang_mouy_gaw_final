@@ -2,34 +2,144 @@
 {% load static %}
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="stylesheet" href="{% static 'dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        h1 {
+            color: black;
+            font-family: "arial";
+            font-size: 3em;
+            margin: 10px 0 0 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            animation: animtext 4s steps(80, end);
+            transition: all cubic-bezier(0.1, 0.7, 1.0, 0.1);
+        }
+        
+        @keyframes animtext {
+            from {
+                width: 0;
+                transition: all 2s ease-in-out;
+            }
+        }
+        
+        .theBody {
+            background-image: url("{% static 'images/fa2.png' %}");
+            background-repeat: no-repeat;
+            size: 100px;
+        }
+        
+        .bodyContainer {
+            /* background-color: bisque; */
+            height: 40%;
+            width: 100%;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            /* background-image: url("{% static 'images/fa2.png' %}");
+            background-repeat: no-repeat;
+            background-size: 300px; */
+        }
+        
+        .mycard {
+            height: 100%;
+        }
+        
+        .mybtn {
+            border-top-right-radius: 30px;
+            border-bottom-left-radius: 20px;
+        }
+    </style>
 </head>
 
-<body>
-    Accueil
-    <br>
-    <a href="{% url 'tcs' %}">Accueil</a>
-    <!-- <button class="btn btn-primray">
-        <a href="{% url 'tcs' %}"></a>
-        Client Simple
-     </button> -->
-    <br>
-    <!-- <button class="btn btn-danger">
-        <a href="{% url 'tcSenior' %}"></a>
+<body class="theBody">
 
-        Client Senior</button> -->
-    <a href="{% url 'tcSenior' %}">add senior</a>
-    <br>
-    <!-- <button class="btn btn-light">
-        <a href="{% url 'tcp' %}"></a>
-        Client Pregnant</button> -->
+    <header>
+        {%include 'header.html' %}
+    </header>
+    <section class="bodyContainer">
 
-    <a href="{% url 'tcp' %}">add Pregnant</a>
-    <br>
-    <button>Connexion</button>
+        <div class="container">
+            <div class="row">
+                <h1 style="text-align: center; font-size: 70px; font-weight: bold;">Transformez</h1>
+
+            </div>
+            <div class="row">
+                <h1 style="text-align: center; font-size: 40px; font-weight: normal;">Votre attente Client</h1>
+
+            </div>
+        </div>
+
+    </section>
+
+    <div class="row container-fluid">
+        <div class="card-group">
+            <div class="col-md-4">
+                <div class="card shadow mycard">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Vigile</h3>
+                        <hr>
+                        <p class="card-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <a href="{% url 'vigile' %}">
+
+                            <p class="card-text">
+
+                                <div class="btn btn-info btn-block mybtn">details</div>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow mycard">
+                    <div class="card-body text-center">
+                        <h3 class="card-title"> Agent comptoire </h3>
+                        <hr>
+                        <p class="card-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                        <a href="{% url 'listefileDattenteCaisse' %}">
+                            <p class="card-text">
+                                <div class="btn btn-info btn-block mybtn">details</div>
+                            </p>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card  mycard shadow">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Superviseur</h3>
+                        <hr>
+                        <p class="card-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+
+                        <a href="{% url 'listefileDattente' %}">
+                            <p class="card-text">
+                                <div class="btn btn-info btn-block mybtn">details</div>
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <section></section>
+
 
 
 </body>
