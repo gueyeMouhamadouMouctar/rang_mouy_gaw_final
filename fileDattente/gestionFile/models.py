@@ -108,7 +108,7 @@ class ClientQueueManager:
                 nextClient = row[2]
                 if(nextClient == None):
                     break
-            return str(rows)
+            return rows
         except ValueError:
             return []
 
