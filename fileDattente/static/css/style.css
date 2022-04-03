@@ -1,0 +1,119 @@
+.footer {
+    background-color: black;
+    margin-top: 10px;
+    height: 150px;
+}
+
+nav ul {
+    list-style: none;
+    text-align: end;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 10px 10px;
+}
+
+nav ul li a {
+    align-content: flex-end;
+    text-align: center;
+    color: orangered;
+    font-weight: 900px;
+    background-color: white;
+    border-radius: 20px;
+    width: 100px;
+}
+
+.contenue {
+    margin-top: 20px;
+}
+
+.baniereGauche {
+    margin-top: 50px;
+    margin-left: 25px;
+    height: 400px;
+    width: 200px;
+}
+
+.baniereDroite {
+    margin-top: 5px;
+    margin-left: 180px;
+    height: 400px;
+    width: 100px;
+}
+
+.Pititebaniere {
+    margin-top: 5px;
+    margin-left: 20px;
+    height: auto;
+    width: auto;
+}
+
+.Pititebaniere2 {
+    margin-bottom: 10px;
+    height: 150px;
+}
+
+.contenueFooter {
+    color: white;
+    text-align: center;
+}
+
+.navBar {
+    background-color: black;
+}
+
+.header {
+    background-color: orangered;
+    height: 80px;
+}
+
+.ctn1 {
+    background-color: white;
+    height: 60px;
+    margin: 0px, 0px;
+}
+
+#bouton {
+    margin-top: 10px;
+    margin-left: 20px;
+    height: 40px;
+    width: 180px;
+    border-radius: 100px;
+    background-color: orangered;
+    color: white;
+    font-weight: bold;
+}
+
+#boutonAjout {
+    margin-top: 10px;
+    margin-left: 20px;
+    height: 40px;
+    width: 180px;
+    border-radius: 100px;
+    background-color: orangered;
+    color: white;
+    font-weight: bold;
+}
+
+#bouton:hover {
+    margin-top: 10px;
+    margin-left: 20px;
+    height: 40px;
+    width: 180px;
+    border-radius: 100px;
+    border: 20;
+    border-color: orangered;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    transform: .2s;
+}
+
+.baniereTof {
+    margin-top: 10px;
+}
+
+.monCardf {
+    background-color: green;
+}

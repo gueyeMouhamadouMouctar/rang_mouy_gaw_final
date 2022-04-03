@@ -11,14 +11,14 @@ def tickets(request):
 
 def addClientSImple(request):
     ClientQueueManager.add_client()
-    return render(request, 'accueil.html')
+    return render(request, 'espace_Vigile.html')
 
 
 def addClientSenior(request):
     ClientQueueManager.add_senior()
-    return render(request, 'accueil.html')
+    return render(request, 'espace_Vigile.html')
 
 
 def addClientPregnant(request):
     ClientQueueManager.add_pregnant()
-    return render(request, 'accueil.html')
+    return render(request, 'espace_Vigile.html')

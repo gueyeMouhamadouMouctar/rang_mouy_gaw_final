@@ -1,0 +1,133 @@
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="stylesheet" href="{% static 'dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>Vigile</title>
+    <style>
+        .theBtnLink {
+            height: 180px;
+            width: 100%;
+            border-radius: 20px;
+            margin: 10px;
+        }
+        
+        .circle {
+            /* background-color: antiquewhite; */
+            height: 120px;
+            width: 120px;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        {%include 'header.html' %}
+
+    </header>
+
+    <section class="container-fluid" style="margin-top: 10px;">
+        <div class="row container-fluid">
+            <div class="col-md-6 container">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner bg-light">
+                        <div class="carousel-item active">
+                            <img src="{% static 'images/fa2.png' %}" style="height: 450px" class="d-block w-100" alt="...">
+
+                            <div class="text-dark carousel-caption d-none d-md-block" style="margin: 0px;
+                        background-color:azure;
+                        opacity: 0.6;">
+                                <h5><b>Bienvenue</b></h5>
+                                <p class="text-danger"><b>à la gestion du File D'attent...</b></p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+            <div class="col-md-6 container-fluid card">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="{% url 'tcs' %}" class="" style="text-align: center;">
+                            <div class="btn btn-info theBtnLink">
+                                <p class="circle">
+                                    <img src="{% static 'images/j1.jpg' %} " class="rounded-circle  img-fluid">
+                                </p>
+                                <h4>
+                                    Client simple
+                                </h4>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="col-md-6">
+                        <a href="{% url 'tcSenior' %}">
+                            <div class="btn btn-info theBtnLink">
+                                <p class="circle">
+                                    <img src="{% static 'images/S1.webp' %} " class="rounded-circle  img-fluid">
+                                </p>
+                                <h4>
+                                    Senior
+                                </h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="{% url 'tcp' %}" class="">
+                            <div class="btn btn-info theBtnLink">
+                                <p class="circle">
+                                    <img src="{% static 'images/FE2.jpg' %} " class="rounded-circle  img-fluid">
+                                </p>
+                                <h4>
+                                    Femme enceinte
+                                </h4>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="" class="">
+                            <div class="btn btn-info theBtnLink">
+                                <p class="circle">
+                                    <img src="{% static 'images/User1.webp' %} " class="rounded-circle  img-fluid">
+                                </p>
+                                <h4>
+                                    Total: XXX
+                                </h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <script src="{% static 'dist/js/jquery.js' %}"></script>
+    <script src="{% static 'dist/js/bootstrap.js' %}"></script>
+    <script src="{% static 'dist/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>

@@ -6,11 +6,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caisse</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="stylesheet" href="{% static 'dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
 </head>
-<a href="{% url 'passer_au_client_suiv' %}">Passer au client suivant</a> {% for listeFA in listeFileDattente %} {{ listeFA }} {% endfor %}
+<!-- <a href="{% url 'passer_au_client_suiv' %}">Passer au client suivant</a> {% for listeFA in listeFileDattente %} {{ listeFA }} {% endfor %} -->
 
 <body>
 
+
+    <header>
+
+    </header>
+
+
+
+    <article class="container container-fluid">
+
+        <br>
+        <div class="row">
+            <div class="col-md-3"></div>
+
+            <div class="col-md-9">
+
+                <div class="card card-body">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <h3>Liste de la file d'attente</h3>
+                        </div>
+                        <div class="col-md-5">
+                            <a href="{% url 'passer_au_client_suiv' %}">
+                                <div class="btn btn-info btn-block">Passer au suivant</div>
+                            </a>
+                        </div>
+                    </div>
+                    <br>
+
+                    <table class="table table-sm table-hover table-striped " id="myTable">
+                        <tr>
+                            <th>Numero</th>
+                            <th>details d'arrivage</th>
+                            <th>Numero suivant</th>
+                        </tr>
+
+                        {% for file in listeFileDattente%}
+                        <tr>
+                            <td>{{ file.number }}</td>
+                            <td>{{ file.arrival }}</td>
+                            <td>{{ file.next_client_number }}</td>
+                        </tr>
+                        {%endfor%}
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+
+
+    <script src="{% static 'dist/js/jquery.js' %}"></script>
+    <script src="{% static 'dist/js/bootstrap.js' %}"></script>
+    <script src="{% static 'dist/js/bootstrap.min.js' %}"></script>
 </body>
 
 </html>
