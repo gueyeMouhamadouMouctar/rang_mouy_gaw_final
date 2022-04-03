@@ -16,6 +16,7 @@ urlpatterns = [
 
     path('start', super_views.start, name='start'),
     path('superviseur', super_views.listeFA, name='listefileDattente'),
+    path('continue',super_views.continuer,name='continue'),
     #path('', menu.index, name='menu'),
 
 

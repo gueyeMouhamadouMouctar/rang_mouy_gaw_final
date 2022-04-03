@@ -2,9 +2,23 @@
 
 # Create your models here.
 
+from pickle import TRUE
+from django.db import models
 import mysql.connector
 from mysql.connector import errorcode
 
+class Personnel(models.Model):
+	idPersonnel=models.IntegerField(primary_key=True)
+	nom=models.CharField(max_length=255)
+	prenom=models.CharField(max_length=255)
+	profil=models.CharField(max_length=255)
+	email=models.EmailField(max_length=255)
+	password=models.CharField(max_length=255)
+	created_at=models.DateTimeField(auto_now_add=True)
+	updated_at=models.DateTimeField(auto_now=True)
+
+	def __str__(self) -> str:
+		return super().__str__()
 
 class ClientQueueManager:
     @staticmethod
@@ -83,6 +97,21 @@ class ClientQueueManager:
         rows = ClientQueueManager.send_message('CALL get_length(@retour)')
         if(len(rows) > 0):
             return rows[0][0]
+
+
+
+    
+    @staticmethod
+    def refresh_file():
+        try:
+            # Trun de la file
+            ClientQueueManager.send_message(
+                "TRUNCATE TABLE client", sql2=None)
+            return []
+        except ValueError:
+            return []
+
+
 
     @staticmethod
     def get_all_clients():
