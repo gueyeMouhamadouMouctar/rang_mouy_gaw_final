@@ -1,0 +1,20 @@
+img {
+    width: calc(1920px/10);
+    height: calc(1080px/10);
+}
+
+.container {
+    background: url('/static/images/magenta.jpg');
+    margin: 50px 0 0 27%;
+    padding: 10px;
+    width: 100%;
+    border: 10px groove rgba(0, 0, 0, 0.575);
+    box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.424);
+}
+
+h1 {
+    text-align: center;
+}
+
+
+/*le style appliquer au bouton*/
