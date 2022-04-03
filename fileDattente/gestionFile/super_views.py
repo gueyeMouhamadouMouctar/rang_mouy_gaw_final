@@ -13,11 +13,11 @@ def show(request):
     context = {'liste': liste}
     return render(request, 'espace_superviseur.html', context)
 
+def start(request, status=None):
+    for i in range(int(ClientQueueManager().get_queue_length())):
+        ClientQueueManager().pop_first_client()
+    return show(request)
 
-def start(request):
-    liste = ClientQueueManager().refresh_file()
-    context = {'liste': liste}
-    return render(request, 'espace_superviseur.html', context)
 
 def continuer(request):
     return show(request)
